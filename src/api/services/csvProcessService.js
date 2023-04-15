@@ -10,14 +10,11 @@ const createProcessService = async (
 	csvStr
 ) => {
 	try {
-		let data = [];
 		csv()
 		.fromString(csvStr)
 		.then((csvRow)=>{ 
 			saveRowToMongo(csvRow);
-		});
-		
-
+		});	
 	} catch (err) {
 		console.error(err);
 		return null;

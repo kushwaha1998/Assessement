@@ -1,9 +1,9 @@
-const createProcessService = require("../services/csvProcessService");
+const csvProcessService = require("../services/csvProcessService");
 
-const createAccountApi = async (req, res) => {
+const processCsvApi = async (req, res) => {
 	try {
 		let {csv} = req.body;
-		await createProcessService(csv);
+		await csvProcessService(csv);
 		res
     .status(200)
 		.json(
@@ -23,4 +23,4 @@ const createAccountApi = async (req, res) => {
 	}
 }
 
-module.exports =createAccountApi;
+module.exports =processCsvApi;

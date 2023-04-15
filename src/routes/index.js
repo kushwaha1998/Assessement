@@ -1,26 +1,30 @@
 const express = require('express');
+const createAccountApi = require('../api/controllers/createAccountController');
+const createPolicyApi = require('../api/controllers/createPolicyController');
+const createUserApi = require('../api/controllers/createUserController');
+const processCsvApi = require('../api/controllers/csvDataProcess');
 
 const router = express.Router();
 // CRUD operation for User, Account, and Policy
 
 router.post(
 	'/user',
-	// controlller
+	createUserApi
 )
 
 router.post(
 	'/account',
-	// controlller
+	createAccountApi
 )
 
 router.post(
 	'/policy',
-	// controlller
+	createPolicyApi
 )
 
 router.post(
 	'/csvProcess',
-	// controlller
+	processCsvApi
 )
 
 module.exports = router;
